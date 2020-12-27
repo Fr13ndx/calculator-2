@@ -1,0 +1,32 @@
+body {
+    background: linear-gradient(to right, #606c88, #3f4c6b);
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif;
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.calculator-grid > button {
+    font-size: 2rem;
+}
+
+.output {
+    grid-column: span 1 / -1;
+}
+
+.column-span-two {
+    grid-column: span 2;
+}
+
+.row-span-two {
+    grid-row: span 2;
+}
