@@ -1,10 +1,15 @@
+@font-face {
+    font-family: "Fira Code";
+    src: url(../font/FiraCode-VariableFont_wght.ttf)
+}
+
 body {
     background: linear-gradient(to right, #606c88, #3f4c6b);
 }
 
 *, *::before, *::after {
     box-sizing: border-box;
-    font-family: Gotham Rounded, sans-serif;
+    font-family: "Fira Code";
 }
 
 .calculator-grid {
@@ -13,14 +18,15 @@ body {
     align-content: center;
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    min-height: 100vh;
 }
 
 .calculator-grid > button {
+    cursor: pointer;
     font-size: 2rem;
-}
-
-.output {
-    grid-column: span 1 / -1;
+    border: 1px solid white;
+    outline: none;
+    
 }
 
 .column-span-two {
@@ -29,4 +35,26 @@ body {
 
 .row-span-two {
     grid-row: span 2;
+}
+
+.output {
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 0.5em;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+}
+
+.output .current-operand {
+    color: white;
+    font-size: 2.5rem;
 }
